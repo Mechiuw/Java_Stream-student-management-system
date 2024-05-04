@@ -35,7 +35,7 @@ public class StudentRepository {
     }
     public List<StudentResponse> getAll(){
 
-        List<Student> students = studentRepos.stream().collect(Collectors.toList());
+        List<Student> students = studentRepos.stream().toList();
         return students.stream()
                 .map(this::convertToStudentResponse)
                 .collect(Collectors.toList());

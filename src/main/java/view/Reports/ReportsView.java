@@ -55,20 +55,17 @@ public class ReportsView {
                 case "3":
                     System.out.println("insert report unit to update :\n" +
                             "1. insert new subject :\n" +
-                            "2. insert new unit :\n" +
-                            "3. insert new semester:\n" +
-                            "4. insert new year:\n" +
+                            "2. insert new semester:\n" +
+                            "3. insert new year:\n" +
                             "Type one by one :\n");
                     String id = scan.nextLine();
                     String ba = scan.nextLine();
-                    String bb = scan.nextLine();
                     int bc = scan.nextInt();
                     scan.nextLine();
                     String bd = scan.nextLine();
 
                     ReportsRequest reportsRequestPut = ReportsRequest.builder()
                             .subject(ba)
-                            .unit(bb)
                             .semester(bc)
                             .year(bd)
                             .build();

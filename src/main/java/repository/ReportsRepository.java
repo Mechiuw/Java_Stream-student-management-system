@@ -23,6 +23,7 @@ public class ReportsRepository {
                 .semester(reportsRequest.getSemester())
                 .year(reportsRequest.getYear())
                 .build();
+        reportsRepos.add(reports);
 
         return ReportsResponse.builder()
                 .subject(reports.getSubject())

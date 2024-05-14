@@ -72,30 +72,30 @@ public class ReportsRepository {
         }
     }
 
-    public StudentResponse update(String id, StudentRequest studentRequest){
+    public ReportsResponse update(String id, ReportsRequest reportsRequest){
 
-        Optional<Student> studentOptional = studentRepos.stream().filter(student -> student.getId().equals(id)).findFirst();
+        Optional<Reports> reportsOptional = reportsRepos.stream().filter(reports -> reports.getUnit().equals(id)).findFirst();
 
-        if(studentOptional.isPresent()){
-            Student student = studentOptional.get();
+        if(reportsOptional.isPresent()){
+            Reports reports = reportsOptional.get();
 
-            student.setFirstName(studentRequest.getFirstName());
-            student.setMajor(studentRequest.getMajor());
-            student.setEmail(studentRequest.getEmail());
+            reports.setSubject(reportsRequest.getSubject());
+            reports.setSemester(reportsRequest.getSemester());
+            reports.setYear(reportsRequest.getYear());
 
-            // Return updated student response
-            return StudentResponse.builder()
-                    .firstname(student.getFirstName())
-                    .id(student.getId())
-                    .major(student.getMajor())
-                    .email(student.getEmail())
+            // Return updated reports response
+            return ReportsResponse.builder()
+                    .subject(reports.getSubject())
+                    .unit(reports.getUnit())
+                    .semester(reports.getSemester())
+                    .year(reports.getYear())
                     .build();
         } else {
-            return StudentResponse.builder()
-                    .firstname("firstname not found")
-                    .id("id not found")
-                    .email("email not found")
-                    .major("major not found")
+            return ReportsResponse.builder()
+                    .subject("...subject not found")
+                    .unit("...unit not found")
+                    .semester(0)
+                    .year("...year not found")
                     .build();
         }
     }

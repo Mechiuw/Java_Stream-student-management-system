@@ -5,7 +5,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import model.dto.request.StudentRequest;
 import model.dto.response.StudentResponse;
-import service.StudentService;
+import service.StudentServiceInterface;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ import java.util.List;
 @Getter
 @Setter
 public class StudentController {
-    private final StudentService studentService;
+    private final StudentServiceInterface studentService;
 
     public StudentResponse createStudent(StudentRequest studentRequest){
         return studentService.addStudent(studentRequest);

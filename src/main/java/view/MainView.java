@@ -3,7 +3,7 @@ package view;
 import controller.StudentController;
 import lombok.RequiredArgsConstructor;
 import repository.StudentRepository;
-import service.StudentService;
+import service.impl.StudentService;
 import view.Student.StudentView;
 
 import java.util.*;

@@ -4,9 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.ToString;
 import model.dto.request.ReportsRequest;
-import model.dto.request.StudentRequest;
 import model.dto.response.ReportsResponse;
-import model.dto.response.StudentResponse;
 import model.entity.Reports;
 
 import java.util.List;

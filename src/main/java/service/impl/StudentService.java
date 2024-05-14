@@ -1,18 +1,17 @@
-package service;
+package service.impl;
 
 import lombok.*;
 import model.dto.request.StudentRequest;
 import model.dto.response.StudentResponse;
 import repository.StudentRepository;
+import service.StudentServiceInterface;
 
 import java.util.List;
 
 
 @RequiredArgsConstructor
 @Builder
-@Setter
-@Getter
-public class StudentService {
+public class StudentService implements StudentServiceInterface {
     private final StudentRepository studentRepository;
     public StudentResponse addStudent(StudentRequest studentRequest){
         return studentRepository.post(studentRequest);

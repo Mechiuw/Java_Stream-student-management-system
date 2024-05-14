@@ -101,13 +101,13 @@ public class ReportsRepository {
     }
 
     public void delete(String id){
-        Optional<Student> studentOptional = studentRepos.stream().filter(student -> student.getId().equals(id)).findFirst();
+        Optional<Reports> reportsOptional = reportsRepos.stream().filter(reports -> reports.getUnit().equals(id)).findFirst();
 
-        if(studentOptional.isPresent()){
-            Student student = studentOptional.get();
-            studentRepos.remove(student);
+        if(reportsOptional.isPresent()){
+            Reports reports = reportsOptional.get();
+            reportsRepos.remove(reports);
         } else {
-            System.out.println("student not found");
+            System.out.println("reports not found");
         }
     }
 

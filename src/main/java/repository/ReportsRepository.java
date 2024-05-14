@@ -43,7 +43,7 @@ public class ReportsRepository {
     public ReportsResponse convertToReportsResponse(Reports reports){
         return ReportsResponse.builder()
                 .subject(reports.getSubject())
-                .unit(reports.getSubject())
+                .unit(reports.getUnit())
                 .semester(reports.getSemester())
                 .year(reports.getYear())
                 .build();

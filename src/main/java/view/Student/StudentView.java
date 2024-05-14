@@ -108,7 +108,7 @@ public class StudentView {
                     around = false;
                     break;
                 default:
-                    System.out.println("Invalid choice. Please enter a number between 1 and 5.");
+                    System.out.println("Invalid choice. Please enter a number between 1 to 6");
             }
         }
         MainView.run();

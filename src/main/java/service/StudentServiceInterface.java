@@ -6,9 +6,9 @@ import model.dto.response.StudentResponse;
 import java.util.List;
 
 public interface StudentServiceInterface {
-    public StudentResponse addStudent(StudentRequest studentRequest);
-    public List<StudentResponse> getAllStudent();
-    public StudentResponse getById(String id);
-    public StudentResponse update(String id, StudentRequest studentRequest);
-    public void delete(String id);
+    StudentResponse addStudent(StudentRequest studentRequest);
+    List<StudentResponse> getAllStudent();
+    StudentResponse getById(String id);
+    StudentResponse update(String id, StudentRequest studentRequest);
+    void delete(String id);
 }

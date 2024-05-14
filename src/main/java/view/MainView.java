@@ -29,6 +29,7 @@ public class MainView {
         Scanner scan = new Scanner(System.in);
         int choice = scan.nextInt();
         StudentView studentView = new StudentView(new StudentController(new StudentService(new StudentRepository(new ArrayList<>()))));
+
         switch (choice)
         {
             case 1:

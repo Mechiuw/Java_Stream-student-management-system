@@ -6,8 +6,6 @@ import model.dto.request.ReportsRequest;
 import view.MainView;
 
 import java.util.*;
-
-
 @RequiredArgsConstructor
 public class ReportsView {
     private final ReportsController reportsController;
@@ -50,7 +48,7 @@ public class ReportsView {
                     System.out.println(reportsController.createReports(reportsRequestPost));
                     break;
                 case "2":
-                    reportsController.viewAllReports();
+                    reportsController.viewAllReports().forEach(System.out::println);
                     break;
                 case "3":
                     System.out.println("insert report unit to update :\n" +

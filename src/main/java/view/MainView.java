@@ -1,9 +1,13 @@
 package view;
 
+import controller.ReportsController;
 import controller.StudentController;
 import lombok.RequiredArgsConstructor;
+import repository.ReportsRepository;
 import repository.StudentRepository;
+import service.impl.ReportsService;
 import service.impl.StudentService;
+import view.Reports.ReportsView;
 import view.Student.StudentView;
 
 import java.util.*;
@@ -28,15 +32,23 @@ public class MainView {
     public static void control(){
         Scanner scan = new Scanner(System.in);
         int choice = scan.nextInt();
-        StudentView studentView = new StudentView(new StudentController(new StudentService(new StudentRepository(new ArrayList<>()))));
-
+        StudentView studentView = new StudentView(
+                new StudentController(
+                        new StudentService(
+                                new StudentRepository(
+                                        new ArrayList<>()))));
+        ReportsView reportsView = new ReportsView(
+                new ReportsController(
+                        new ReportsService(
+                                new ReportsRepository(
+                                        new ArrayList<>()))));
         switch (choice)
         {
             case 1:
                 studentView.StudentOption();
                 break;
             case 2:
-//                ReportsOption();
+                reportsView.ReportsOption();
                 break;
             case 3:
 //                ReportCardOption();

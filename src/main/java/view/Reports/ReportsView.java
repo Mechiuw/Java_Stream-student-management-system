@@ -7,7 +7,6 @@ import view.MainView;
 
 import java.util.*;
 
-import static view.MainView.control;
 
 @RequiredArgsConstructor
 public class ReportsView {

@@ -1,18 +1,15 @@
 package model.entity;
 
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
-@RequiredArgsConstructor
+@AllArgsConstructor
 @Builder
 public class Reports {
     private String subject;
     private String unit;
-    private Integer semester;
+    private int semester;
     private String year;
 }

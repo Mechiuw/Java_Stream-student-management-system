@@ -38,8 +38,8 @@ public class ReportsView {
                     String aa = scan.nextLine();
                     String ab = scan.nextLine();
                     int ac = scan.nextInt();
+                    scan.nextLine();
                     String ad = scan.nextLine();
-
                     ReportsRequest reportsRequestPost = ReportsRequest.builder()
                             .subject(aa)
                             .unit(ab)
@@ -63,6 +63,7 @@ public class ReportsView {
                     String ba = scan.nextLine();
                     String bb = scan.nextLine();
                     int bc = scan.nextInt();
+                    scan.nextLine();
                     String bd = scan.nextLine();
 
                     ReportsRequest reportsRequestPut = ReportsRequest.builder()

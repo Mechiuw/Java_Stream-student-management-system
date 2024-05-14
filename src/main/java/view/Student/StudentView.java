@@ -3,6 +3,7 @@ package view.Student;
 import controller.StudentController;
 import lombok.RequiredArgsConstructor;
 import model.dto.request.StudentRequest;
+import view.MainView;
 
 import java.util.*;
 
@@ -46,8 +47,11 @@ public class StudentView {
                     String e = scan.nextLine();
                     System.out.println("input phone number");
                     String f = scan.nextLine();
+                    System.out.println("input ID");
+                    String g = scan.nextLine();
 
                     StudentRequest studentRequest = StudentRequest.builder()
+                            .Id(g)
                             .firstName(a)
                             .lastName(b)
                             .major(c)
@@ -107,5 +111,6 @@ public class StudentView {
                     System.out.println("Invalid choice. Please enter a number between 1 and 5.");
             }
         }
+        MainView.run();
     }
 }

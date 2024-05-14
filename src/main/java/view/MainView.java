@@ -53,6 +53,9 @@ public class MainView {
             case 3:
 //                ReportCardOption();
                 break;
+            case 4 :
+                System.out.println("Thank you for using our application");
+                break;
             default:
                 System.out.println("Invalid choice. Please try again.");
                 break;

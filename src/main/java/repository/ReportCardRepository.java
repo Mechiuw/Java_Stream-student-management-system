@@ -9,6 +9,7 @@ import model.dto.response.ReportsResponse;
 import model.entity.ReportCard;
 
 import java.util.List;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -47,4 +48,23 @@ public class ReportCardRepository {
         );
         return rex.toList();
     }
+
+    public ReportCardResponse getById(ReportCardRequest reportCardRequest){
+        return reportCardList.stream()
+                .filter(reportCard -> reportCard.getStudentId().equals(reportCardRequest.getStudentId()))
+                .map(reportCard -> ReportCardResponse.builder()
+                        .StudentId(reportCard.getStudentId())
+                        .ReportsId(reportCard.getReportsId())
+                        .Exams(reportCard.getExams())
+                        .Homeworks(reportCard.getHomeworks())
+                        .build())
+                .findFirst().orElse(ReportCardResponse.builder()
+                        .StudentId(null)
+                        .ReportsId(null)
+                        .Exams(0)
+                        .Homeworks(0)
+                        .build());
+    }
+
+
 }

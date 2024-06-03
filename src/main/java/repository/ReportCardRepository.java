@@ -5,14 +5,10 @@ import lombok.Builder;
 import lombok.ToString;
 import model.dto.request.ReportCardRequest;
 import model.dto.response.ReportCardResponse;
-import model.dto.response.ReportsResponse;
 import model.entity.ReportCard;
 
-import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 @AllArgsConstructor
@@ -66,13 +62,27 @@ public class ReportCardRepository {
         }
     }
 
-    public ReportCardRequest update(String id, ReportCardRequest reportCardRequest){
+    public ReportCardResponse update(String id, ReportCardRequest reportCardRequest){
+        Optional<ReportCard> response = reportCardList.stream().filter(x -> x.getId().equals(id)).findFirst();
+            ReportCard reports = response.get();
 
+            reports.setStudentId(reportCardRequest.getStudentId());
+            reports.setReportsId(reportCardRequest.getReportsId());
+            reports.setExams(reportCardRequest.getExams());
+            reports.setHomeworks(reportCardRequest.getHomeworks());
+            reportCardList.add(reports);
 
-        return null;
+        return ReportCardResponse.builder()
+                .StudentId(reportCardRequest.getStudentId())
+                .ReportsId(reportCardRequest.getReportsId())
+                .Exams(reportCardRequest.getExams())
+                .Homeworks(reportCardRequest.getHomeworks())
+                .build();
     }
 
-
-
-
+    public void delete(String id){
+        ReportCard find = reportCardList.stream().filter(x -> x.getId().equals(id)).findFirst().orElseThrow();
+        reportCardList.remove(find);
+        System.out.println("Done delete " + find);
+    }
 }
